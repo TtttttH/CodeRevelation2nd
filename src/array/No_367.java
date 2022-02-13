@@ -1,7 +1,7 @@
 package array;
 
 /**
- * No.367 有效的完全平方数
+ * No.367 有效的完全平方数 (easy)
  */
 public class No_367 {
     public boolean isPerfectSquare(int num) {

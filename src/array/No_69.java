@@ -1,7 +1,7 @@
 package array;
 
 /**
- * No.69 X的平方根
+ * No.69 X的平方根 (easy)
  */
 public class No_69 {
     public int mySqrt(int x) {
