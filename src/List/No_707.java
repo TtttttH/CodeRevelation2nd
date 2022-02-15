@@ -1,7 +1,5 @@
 package List;
 
-import sun.dc.pr.PRError;
-
 /**
  * No.707 Design LinkedList (middle)
  */
@@ -12,7 +10,7 @@ public class No_707 {
         public MyLinkedList(){
             this.size = 0;
             head = new ListNode(0);
-        };
+        }
 
         public int get(int index) {
             if (index < 0 || index >= size) {
