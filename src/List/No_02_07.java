@@ -1,7 +1,7 @@
 package List;
 
 /**
- * 面试题02.07. Intersection of Two Linked Lists LCCI
+ * 面试题02.07. Intersection of Two Linked Lists LCCI(easy)
  */
 public class No_02_07 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
