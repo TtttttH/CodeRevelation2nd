@@ -36,6 +36,8 @@ public class No_15 {
                     ans.add(list);
                     while (right > left && nums[right] == nums[right - 1]) right--;
                     while (left < right && nums[left] == nums[left + 1]) left ++;
+                    left ++;
+                    right --;
                 } else if (sum > -nums[i]) {
                     right--;
                 } else {
