@@ -9,15 +9,16 @@ public class No_206 {
             return head;
         }
 
-        ListNode preHead = null;
+        ListNode pre = null;
+        ListNode temp = null;
         ListNode cur = head;
         while (cur != null) {
-            ListNode temp = cur.next;
-            cur.next = preHead;
-            preHead = cur;
+            temp = cur.next;
+            cur.next = pre;
+            pre = cur;
             cur = temp;
         }
 
-        return preHead;
+        return pre;
     }
 }
