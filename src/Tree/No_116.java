@@ -8,23 +8,29 @@ import java.util.LinkedList;
  */
 public class No_116 {
     public cNode connect(cNode root) {
+//        if (root == null) return null;
+//        Deque<cNode> queue = new LinkedList<>();
+//        queue.offer(root);
+//        while (!queue.isEmpty()) {
+//            int size = queue.size();
+//            for (int i = 0; i < size; i ++) {
+//                cNode node = queue.poll();
+//                if (i == size - 1) {
+//                    node.next = null;
+//                } else {
+//                    node.next = queue.peek();
+//                }
+//
+//                if (node.left != null) queue.offer(node.left);
+//                if (node.right != null) queue.offer(node.right);
+//            }
+//        }
+//        return root;
         if (root == null) return null;
-        Deque<cNode> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i ++) {
-                cNode node = queue.poll();
-                if (i == size - 1) {
-                    node.next = null;
-                } else {
-                    node.next = queue.peek();
-                }
-
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
-            }
-        }
+        if (root.left != null) root.left.next = root.right;
+        if (root.right != null && root.next != null) root.right.next = root.next.left;
+        connect(root.left);
+        connect(root.right);
         return root;
     }
 }
