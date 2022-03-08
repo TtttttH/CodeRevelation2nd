@@ -1,19 +1,20 @@
-package backtrace;
+package backtrack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * No.39 组合总和(middle) 微软
- * 1 <= candidates[i] <= 200
+ * No.40 组合总和II (middle) 微软
+ * 时间复杂度: 最坏情况所有数字不同，且和均小于等于target, O(2^n * n)
+ * 空间复杂度O(n)
  */
-public class No_39 {
+public class No_40 {
     List<List<Integer>> result = new ArrayList<>();
     List<Integer> path = new ArrayList<>();
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         if (candidates == null || candidates.length == 0) return result;
-        Arrays.sort(candidates); //用来配合剪枝优化
+        Arrays.sort(candidates);
         backtrack(candidates, target, 0, 0);
         return result;
     }
@@ -23,12 +24,13 @@ public class No_39 {
             result.add(new ArrayList<>(path));
             return;
         }
-
         for (int i = start; i < candidates.length; i ++) {
-            if (sum + candidates[i] > target) break; //剪枝优化(需要配合排序使用)
+            if (i > start && candidates[i] == candidates[i - 1]) continue;
+            if (sum + candidates[i] > target) break;
             path.add(candidates[i]);
-            backtrack(candidates, target, sum + candidates[i], i);
+            backtrack(candidates, target, sum + candidates[i], i + 1);
             path.remove(path.size() - 1);
         }
     }
+
 }
