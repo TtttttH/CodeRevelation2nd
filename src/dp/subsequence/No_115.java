@@ -1,4 +1,4 @@
-package dp;
+package dp.subsequence;
 
 /**
  * No.115 不同的子序列 (hard) Microsoft
